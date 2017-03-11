@@ -57,7 +57,7 @@ until x==1 do
     y = ExportTweets.new.get_tweets_with_max_id(client, twitter_user, id)
     y.add_tweets_to_file(1)
     id=y.get_last_id
-    sleep 60
+    sleep 1
   rescue => hopefully_last
     x=1
     p hopefully_last
