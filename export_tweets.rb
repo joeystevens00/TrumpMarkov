@@ -51,7 +51,6 @@ first_donald_tweets=ExportTweets.new.get_tweets(client, twitter_user)
 id=first_donald_tweets.get_last_id
 first_donald_tweets.add_tweets_to_file(0)
 
-x=0
 17.times do  # Unfortunately we only can get 3600 tweets (200 tweets at a time)
   y = ExportTweets.new.get_tweets_with_max_id(client, twitter_user, id)
   y.add_tweets_to_file(1)
