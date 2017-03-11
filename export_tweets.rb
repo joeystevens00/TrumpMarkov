@@ -14,11 +14,11 @@ class ExportTweets
     client
   end
   def get_tweets(client, user)
-    @tweets=client.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=#{user}")
+    @tweets=client.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=#{user}&count=200&include_rts=false")
     self
   end
   def get_tweets_with_max_id(client, user, maxId)
-    @tweets=client.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=#{user}&max_id=#{maxId}")
+    @tweets=client.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=#{user}&max_id=#{maxId}&count=200&include_rts=false")
     self
   end
   def add_tweet_to_file(tweet, outfile='exported_tweets.out.txt')
